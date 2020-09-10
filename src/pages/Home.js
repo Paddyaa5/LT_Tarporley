@@ -1,9 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 //images
-import restaurant from '../images/rest.webp'
+import restaurant from '../images/rest.jpg'
+
 //animations
 import { scrollLogo, scrollSubtitle, hideSubtitle } from '../animations/HomeAnimations'
+import HomeButton from '../components/navigation/HomeButton';
 
 const Styled = styled.div`
     width: 100vw;
@@ -28,7 +30,7 @@ const Styled = styled.div`
         text-align: center;
         font-weight: 200;
         border: 2px solid ${(props => props.theme.second)}; 
-        padding: 10px 10px;
+        padding: 5px 15px;
     }
     .subtitle{
         top: 260px;
@@ -51,7 +53,7 @@ const Styled = styled.div`
         }
     }
     .image-section{
-        height: 90vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -85,6 +87,7 @@ const Home = () => {
 
     return (
         <Styled>
+            <HomeButton />
             <div className='banner' ref={ el => section1 = el }>
                 <h1 ref={ el => headline = el } className="headline">Little Tap</h1>
                 <div ref={ el => subtitle= el } className="subtitle">

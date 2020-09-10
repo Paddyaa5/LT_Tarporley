@@ -9,7 +9,6 @@ export const scrollLogo = (node1, node2) => {
     scrollTrigger: {
         trigger: node2,
         start: 'bottom bottom',
-        markers: true,
         scrub: 1
     },
     fontSize: 30,
@@ -23,7 +22,6 @@ export const scrollSubtitle = (node1, node2) => {
         scrollTrigger: {
             trigger: node2,
             start: 'bottom bottom',
-            markers: true,
             scrub: 1
         },
         position: 'fixed',
@@ -35,8 +33,7 @@ export const hideSubtitle = (node1, node2) => {
     gsap.to(node1, {
         scrollTrigger: {
             trigger: node2,
-            start: 'center 32%',
-            markers: true,
+            start: 'center 10%',
             scrub: true
         },
         opacity: 0,
