@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Styled = styled.p`
     font-family: ${(props => props.theme.font2)};
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
     a{
         color: ${(props => props.theme.first)};
@@ -11,8 +11,8 @@ const Styled = styled.p`
         transition: 0.5s;
         cursor: pointer;
         &:hover{
-            font-size: 16px;
-            color: ${(props => props.theme.first)};
+            font-size: 18px;
+            color: ${(props => props.theme.fourth)};
         }
     }
 `

@@ -5,7 +5,7 @@ import App from './App';
 import { ThemeProvider } from 'styled-components';
 
 const theme = {
-  first: '#ECE9D5', //Eggshell
+  first: '#f8f2e7', //Floral White
   second: '#18323A', //Gunmetal
   third: '#464C49', //Grey
   fourth: '#ffcb9a', //tan

@@ -25,7 +25,14 @@ const Bounce = keyframes`
 `
 const TopFooter = styled.div`
     height: 280px;
+    @media screen and (max-width: 950px){
+        height: 322px;
+    }
+    @media screen and (max-width: 500px){
+        height: 520px;
+    }
     .hero{
+    height: 280px;
     width: 100vw;
     font-family: ${(props => props.theme.font3)};
     color: ${(props => props.theme.white)};
@@ -56,7 +63,7 @@ const TopFooter = styled.div`
             "social"
             "hours"
             "info";
-        height: 480px;
+        height: 520px;
     }
     }
     .hero-cover{
@@ -66,7 +73,15 @@ const TopFooter = styled.div`
         position: relative;
         top: -280px;
         left: 0;
-        opacity: 0.4;
+        opacity: 0.6;
+        @media screen and (max-width: 950px){
+            height: 322px;
+            top: -322px;
+        }
+        @media screen and (max-width: 500px){
+            height: 520px;
+            top: -520px;
+        }
     }
     h4{
         align-self: center; 
@@ -96,6 +111,7 @@ const TopFooter = styled.div`
     }
     .social-media{
         grid-area: social;
+        color: ${(props => props.theme.first)};
         .icons{
             width: 260px;
             display: flex;
@@ -103,20 +119,21 @@ const TopFooter = styled.div`
             font-size: 38px;
             margin-bottom: 8px;
             i:hover{
-                color: ${(props => props.theme.second)};
+                color: ${(props => props.theme.fourth)};
                 animation: ${Bounce} 1s linear infinite;
             }
         }
         .comment{
-            font-family: ${(props => props.theme.font1)};
+            font-family: ${(props => props.theme.font3)};
             @media screen and (max-width: 500px){
                 display: none;
             }
         }
         .hashtag{
-            font-family: ${(props => props.theme.font2)};
-            color: ${(props => props.theme.second)};
-            font-size: 14px;
+            font-family: ${(props => props.theme.font1)};
+            color: ${(props => props.theme.fourth)};
+            font-size: 20px;
+            margin-top: 10px;
         }
     }
     .hours{
@@ -191,7 +208,6 @@ const Footer = () => {
                 </div>
                 <div className="hero-cover"></div>
             </TopFooter>
-
             <BottomFooter>
                 <p>Little Tap © 2016 All Rights Reserved. Website created by <span>PADesign</span></p>
             </BottomFooter>

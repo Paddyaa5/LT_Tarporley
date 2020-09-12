@@ -9,8 +9,8 @@ const Styled = styled.div`
     p{
         font-family: ${(props => props.theme.font2)};
         color: ${(props => props.theme.first)};
-        font-size: 12px;
-        margin-bottom: 10px;
+        font-size: 20px;
+        margin-bottom: 15px;
     }
 `
 

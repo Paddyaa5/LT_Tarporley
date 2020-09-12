@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Styled = styled.p`
     font-family: ${(props => props.theme.font2)};
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 10px;
     word-wrap: break-word;
     a{
@@ -12,8 +12,8 @@ const Styled = styled.p`
         text-decoration: none;
         cursor: pointer;
         &:hover{
-            color: ${(props => props.theme.first)};
-            font-size: 14px;
+            color: ${(props => props.theme.fourth)};
+            font-size: 18px;
         }
     }
 `
