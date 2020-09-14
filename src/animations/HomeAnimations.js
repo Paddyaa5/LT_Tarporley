@@ -65,7 +65,7 @@ export const textFadeIn = (node1, node2, node3) => {
         },
         opacity: 1,
         ease: 'power2.easeOut',
-        duration: 1
+        duration: 1.2
     })
 };
 export const lineExpand = (node1, node2) => {
@@ -76,14 +76,14 @@ export const lineExpand = (node1, node2) => {
         },
         width: 500,
         ease: 'power2.easeOut',
-        duration: 1.2
+        duration: 1.4
     })
 };
 export const imageReveal= node1 => {
     gsap.to(node1, {
         scrollTrigger: {
             trigger: node1,
-            start: 'top bottom',
+            start: 'top 85%',
             end: 'top 40%',
             scrub: true,
             markers: true
@@ -100,10 +100,11 @@ export const backgroundFadeIn = (node1, node2) => {
     gsap.to(node1, {
         scrollTrigger: {
             trigger: node2,
-            start: 'top 80%'
+            start: 'top bottom',
+            end: 'top top',
+            snap: true,
+            scrub: true
         },
-        width: 500,
-        ease: 'power2.easeOut',
-        duration: 1.2
+        right: 0
     })
 };

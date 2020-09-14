@@ -28,6 +28,8 @@ const Styled = styled.div`
         font-weight: 200;
         border: 3px solid ${(props => props.theme.second)}; 
         padding: 5px 15px;
+        position: relative;
+        z-index: 1;
     }
     .subtitle{
         top: 260px;

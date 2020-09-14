@@ -72,7 +72,7 @@ const Styled = styled.div`
             .long-image{
                 position: relative;
                 top: 120px;
-                opacity: 0.2;
+                opacity: 0;
                 margin: 0 auto;
                 height: 50%;
                 width: 70%;
@@ -130,6 +130,7 @@ const About = () => {
             <div className="concept-section">
                 <h1>Craft Beer</h1>
                 <h1>Little Plates</h1>
+                <h1>GIN, GIN, GIN</h1>
             </div>
         </Styled>
     )
