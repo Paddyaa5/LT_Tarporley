@@ -16,12 +16,12 @@ const Styled = styled.div`
         height: 25px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
     }
     .hamburger__item {
         width: 25px;
-        height: 4px;
+        height: 3px;
         background-color: ${(props => props.theme.third)};
     } 
     .cross__item {  

@@ -11,6 +11,10 @@ const Styled = styled.header`
   z-index: 1000;
   width: 100vw;
   min-width: 100vw;
+  button{
+    outline: none;
+    border: none;
+  }
   div{
     display: flex;
     justify-content: center;

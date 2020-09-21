@@ -40,8 +40,7 @@ const TopFooter = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "social hours info";
-    column-gap: 15px;
-    row-gap: 15px;
+    grid-gap: 15px;
     padding: 20px 30px;
     height: 280px;
     background-image: url(${drink});

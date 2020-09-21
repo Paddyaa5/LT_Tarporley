@@ -49,8 +49,9 @@ const Styled = styled.div`
             h4{
                 opacity: 0;
                 color: ${(props => props.theme.third)};
-                font-family: ${(props => props.theme.font2)};
-                font-size: 30px;
+                font-family: ${(props => props.theme.font1)};
+                font-size: 40px;
+                font-weight: 200;
                 margin-bottom: 20px;
                 margin-left: 20px;
             }
@@ -96,6 +97,20 @@ const Styled = styled.div`
             font-weight: 200;
             margin-left: 50px;
         }
+        h6{
+            margin-top: 20px;
+            font-family: ${props => props.theme.font2};
+            color: ${props => props.theme.second};
+            font-size: 40px;     
+            text-align: center;
+       }
+        p{
+            margin: 20px 530px;
+            font-family: ${props => props.theme.font3};
+            color: ${props => props.theme.second};
+            font-size: 14px;     
+            text-align: justify;
+       }
     }
 `
 
@@ -128,9 +143,7 @@ const About = () => {
                 </div>
             </div>
             <div className="concept-section">
-                <h1>Craft Beer</h1>
-                <h1>Little Plates</h1>
-                <h1>GIN, GIN, GIN</h1>
+
             </div>
         </Styled>
     )

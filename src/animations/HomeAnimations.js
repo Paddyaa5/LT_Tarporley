@@ -85,8 +85,7 @@ export const imageReveal= node1 => {
             trigger: node1,
             start: 'top 85%',
             end: 'top 40%',
-            scrub: true,
-            markers: true
+            scrub: true
         },
         opacity: 1,
         top: '0px',
@@ -108,3 +107,16 @@ export const backgroundFadeIn = (node1, node2) => {
         right: 0
     })
 };
+
+export const instagramImagesFade = (node1, node2) => {
+    gsap.to(node1, {
+        scrollTrigger: {
+            trigger: node2,
+            start: 'top 30%',
+            end: 'top top',
+            scrub: true
+        },
+        opacity: 1
+    })
+};
+

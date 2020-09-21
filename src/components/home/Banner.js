@@ -38,6 +38,7 @@ const Styled = styled.div`
         align-items: center;
         width: 200px;
         height: 20px;
+        font-family:${(props => props.theme.font2)};
         h4{
             margin: 0;
             font-size: 12px;
@@ -62,6 +63,11 @@ const Styled = styled.div`
             height: 90%;
             object-fit: cover;
         }
+    }
+    h3{
+        font-family: ${(props => props.theme.font2)};
+        color: ${(props => props.theme.second)};
+        margin-top: 130px;
     }
 `
 

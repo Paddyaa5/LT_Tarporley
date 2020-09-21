@@ -55,12 +55,14 @@ export const fadeLeft = (node) => {
 export const handleCity = (city, cityBack) => {
     gsap.to(cityBack, {
         duration: 0,
-        background: `url(${city}) center center`,
+        background: `url(${city})`,
+        backgroundSize: '100vw 100vh'
     });
     gsap.to(cityBack, {
         duration: 0.4,
         opacity: 1,
-        ease: "power3.inOut"
+        ease: "power3.inOut",
+        width: '100%'
     });
     gsap.from(cityBack, {
         duration: 0.4,

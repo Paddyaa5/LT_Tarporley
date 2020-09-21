@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Styled = styled.div`
+    position: relative;
+    z-index: 1000;
+    
     div{
         display: flex;
         justify-content: center;

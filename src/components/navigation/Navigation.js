@@ -62,10 +62,9 @@ const Styled = styled.div`
       bottom: 0;
       left: 0;
       right: 0;
-      height: 100%;
-      width: 100vw;
       opacity: 0;
-      object-fit: cover;
+      background-size: 100px 100px;
+      background-repeat: no-repeat;
       animation-name: ${backgroundEffect};
       animation-duration: 40s;
       animation-iteration-count: infinite;
@@ -80,7 +79,7 @@ const Styled = styled.div`
           justify-content: space-around;
           align-items: center;
           position: relative;
-          top: 25vh;
+          top: 20vh;
           nav{
             display: block;
             ul{
@@ -119,7 +118,7 @@ const Styled = styled.div`
         } 
       }
       .info{
-        width: 250px;
+        width: 350px;
         @media screen and (max-width: 500px){
           width: 110px;
         }
@@ -163,6 +162,9 @@ const Styled = styled.div`
             background-color: ${(props => props.theme.second)};
             padding: 8px 24px;
             border-radius: 4px;
+          }
+          img{
+            object-fit: cover;
           }
         }
       }
@@ -215,6 +217,8 @@ const Navigation = ({state}) => {
               
               <nav>
                 <ul>
+                  <li ref={ e => line1 = e}><Link to="/">Home</Link>
+                  </li>
                   <li ref={ e => line1 = e}><Link to="/food">Our Food</Link>
                   </li>
                   <li ref={ e => line2 = e}><Link to="/drinks">Our Drinks</Link>
