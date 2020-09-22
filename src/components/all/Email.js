@@ -13,7 +13,6 @@ const Styled = styled.p`
         cursor: pointer;
         &:hover{
             color: ${(props => props.theme.fourth)};
-            font-size: 18px;
         }
     }
 `

@@ -7,7 +7,7 @@ import AddressLink from '../all/Address';
 import PhoneLink from '../all/Phone';
 import Hours from '../all/Hours';
 //images
-import drink from '../../images/drink.jpg';
+import footer from '../../images/footer.jpg'
 
 const Bounce = keyframes`
     20%, 50%, 80%, to{
@@ -24,73 +24,45 @@ const Bounce = keyframes`
     }
 `
 const TopFooter = styled.div`
-    height: 280px;
-    @media screen and (max-width: 950px){
-        height: 322px;
-    }
-    @media screen and (max-width: 500px){
-        height: 520px;
-    }
-    .hero{
-    height: 280px;
+    height: auto;
     width: 100vw;
-    font-family: ${(props => props.theme.font3)};
-    color: ${(props => props.theme.white)};
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "social hours info";
-    grid-gap: 15px;
-    padding: 20px 30px;
-    height: 280px;
-    background-image: url(${drink});
-    background-size: cover;
-    border-bottom: ${(props) => props.theme.first} 0.1px solid;
-    border-top: ${(props) => props.theme.first} 0.1px solid;
-    @media screen and (max-width: 950px){
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: 
-            "social hours"
-            "info info";
-        height: 322px;
-    }
-    @media screen and (max-width: 500px){
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: 
-            "social"
-            "hours"
-            "info";
-        height: 520px;
-    }
-    }
-    .hero-cover{
-        background-color: ${(props => props.theme.third)};
+    .hero{
+        height: 100%;
         width: 100%;
-        height: 280px;
         position: relative;
-        top: -280px;
+        font-family: ${(props => props.theme.font3)};
+        color: ${(props => props.theme.first)};
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px 30px;
+        background: url(${footer}) center center;
+        background-size: cover;
+        padding: 50px 10px;
+        
+        border-bottom: ${(props) => props.theme.first} 0.1px solid;
+        border-top: ${(props) => props.theme.first} 0.1px solid;
+    }
+    .hero::after{
+        content: '';
+        position: absolute;
+        top: 0;
         left: 0;
-        opacity: 0.6;
-        @media screen and (max-width: 950px){
-            height: 322px;
-            top: -322px;
-        }
-        @media screen and (max-width: 500px){
-            height: 520px;
-            top: -520px;
-        }
+        height: 100%;
+        width: 100%;
+        background-color: ${(props) => props.theme.third};
+        opacity: 0.7;
     }
     h4{
         align-self: center; 
         color: ${(props => props.theme.fourth)};
-        font-size: 20px;
-        margin-top: 24px;
+        font-size: 22px;
+        margin-top: 10px;
         margin-bottom: 14px;
     }
     p{
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 10px;
     }
     a{
@@ -101,12 +73,23 @@ const TopFooter = styled.div`
             color: ${(props => props.theme.fourth)};
         }
     }
-    .social-media, .hours, .info{
+    .footer-item{
+        width: 350px;
+        height: 220px;
         display: flex;
         align-items: center;
+        justify-content: top;
         flex-direction: column;
         position: relative;
         z-index: 5;
+        @media screen and (max-width: 900px){
+            height: 200px;
+        }
+
+        @media screen and (max-width: 500px){
+            width: 280px;
+            height: 190px;
+        }
     }
     .social-media{
         grid-area: social;
@@ -181,7 +164,19 @@ const Footer = () => {
         <>
             <TopFooter>
                 <div className="hero">
-                <div className='social-media'>
+                <div className="footer-item info">
+                    <h4>Info.</h4>
+                    <div className="container">
+                        <PhoneLink />
+                        <AddressLink />
+                        <EmailLink />
+                    </div>
+                </div>
+                <div className="footer-item hours">
+                    <h4>Hours.</h4>
+                    <Hours />
+                </div>
+                <div className="footer-item social-media">
                     <h4>Socials.</h4>
                     <div className="icons">
                         <a href="https://www.facebook.com/Littletap/" target='_blank'rel='noopener noreferrer'><i class="fab fa-facebook-square"></i></a>
@@ -192,20 +187,7 @@ const Footer = () => {
                     <p className="comment">Like, Comment, Share.</p>
                     <p className="hashtag">#littleTAP</p>
                 </div>
-                <div className="hours">
-                    <h4>Hours.</h4>
-                    <Hours />
                 </div>
-                <div className="info">
-                    <h4>Info.</h4>
-                    <div className="container">
-                        <PhoneLink />
-                        <AddressLink />
-                        <EmailLink />
-                    </div>
-                </div>
-                </div>
-                <div className="hero-cover"></div>
             </TopFooter>
             <BottomFooter>
                 <p>Little Tap © 2016 All Rights Reserved. Website created by <span>PADesign</span></p>

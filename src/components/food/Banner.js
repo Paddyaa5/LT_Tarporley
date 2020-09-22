@@ -7,22 +7,25 @@ import table from '../../images/table.jpg'
 const Styled = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: ${(props => props.theme.first)};
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 20px;
+    @media screen and (max-width: 950px){
+        height: 50vh;
+    }
 
     .img-container{
         position: relative;
         width: 100%;
         height: 100%;
         overflow: hidden;
-        background-color: ${(props => props.theme.first)};
         display: flex;
         justify-content: center;
         align-items: center;
+        @media screen and (max-width: 500px){
+            margin-top: 50px;
+        }
     }
     .img-cover{
         position: absolute;
@@ -45,8 +48,9 @@ const Styled = styled.div`
         text-shadow: 3px 3px 3px ${(props => props.theme.second)};
         position: relative;
         z-index: 5;
-        overflow: hidden;
-        margin-top: -100px;
+        @media screen and (max-width: 500px){
+            display: none;
+        }
     }
 `
 
@@ -59,9 +63,10 @@ const Banner = () => {
 
     useEffect(() => {
         tl
-        .to(imageCover, 1.2, { width: '0', ease: 'power2.easeInOut'})
-        .to(imageWrapper, 0.5, { padding: 45, ease: 'power2.easeInOut'})
-        .to(title, 0.2, { opacity: 1, y: 50, ease: 'power2.easeInOut'})
+        .to(imageCover, 0.6, { width: '100%', ease: 'power2.easeInOut'})
+        .to(imageCover, 1.5, { width: '0', ease: 'power2.easeInOut'})
+        .to(imageWrapper, 0.5, { paddingTop: 45, paddingBottom: 45, paddingLeft:20, paddingRight: 20, ease: 'power2.easeInOut'})
+        .to(title, 0.5, { opacity: 1, ease: 'power2.easeInOut'}, "-=0.5")
       });
 
     return (

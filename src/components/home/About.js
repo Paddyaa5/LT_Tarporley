@@ -2,9 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 //images
 import inside1 from '../../images/wall2.jpg';
-import bar from '../../images/bar1.jpg';
-import food1 from '../../images/tapas.jpg';
-import food2 from '../../images/dessert.jpg';
+
 //animations
 import { textFadeIn, lineExpand, imageReveal } from '../../animations/HomeAnimations';
 

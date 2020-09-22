@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import styled, { keyframes } from 'styled-components';
 
-import littletap from "../../images/littletap.webp";
+import littletap from "../../images/littletap.jpg";
 
 import Hours from '../../components/all/Hours';
 import Address from '../../components/all/Address';
@@ -63,7 +63,7 @@ const Styled = styled.div`
       left: 0;
       right: 0;
       opacity: 0;
-      background-size: 100px 100px;
+      background-position: center;
       background-repeat: no-repeat;
       animation-name: ${backgroundEffect};
       animation-duration: 40s;
@@ -239,7 +239,7 @@ const Navigation = ({state}) => {
               <div className="locations">
                 Location:
                 {cities.map(e => (
-                  <span
+                  <span 
                     key={e.name}
                     onMouseEnter={() => handleCity(e.image, cityBack)}
                     onMouseOut={() => handleCityReturn(cityBack)}>

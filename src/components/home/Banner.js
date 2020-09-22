@@ -1,67 +1,113 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import gsap from "gsap";
 //images
-import restaurant from '../../images/rest.jpg';
+import primary from '../../images/1.jpg'
+import second from '../../images/2.jpg'
+import third from '../../images/3.jpg'
+import fourth from '../../images/4.jpg'
 //animations
-import { scrollLogo, scrollSubtitle, hideSubtitle, expandBanner } from '../../animations/HomeAnimations';
+import { scrollLogo, scrollSubtitle, hideSubtitle } from '../../animations/HomeAnimations';
 
 const Styled = styled.div`
     width: 100vw;
-    background-color: ${(props => props.theme.first)};
+
     .banner{
         height: 70vh;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .headline, .subtitle{
-        font-family: ${(props => props.theme.font1)};
-        background-color: ${(props => props.theme.first)};
-        color: ${(props => props.theme.second)}; 
-        position: fixed;
-    }
-    .headline{
-        top: 300px;
-        font-size: 110px;
-        text-align: center;
-        font-weight: 200;
-        border: 3px solid ${(props => props.theme.second)}; 
-        padding: 5px 15px;
-        position: relative;
-        z-index: 1;
-    }
-    .subtitle{
-        top: 260px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 200px;
-        height: 20px;
-        font-family:${(props => props.theme.font2)};
-        h4{
-            margin: 0;
-            font-size: 12px;
-            text-align: center;
-            text-transform: uppercase;
+        .headline, .subtitle{
+            font-family: ${(props => props.theme.font1)};
+            background-color: ${(props => props.theme.first)};
+            color: ${(props => props.theme.second)}; 
+            position: fixed;
         }
-        h5{
-            margin: 0;
-            font-size: 9px;
-            width: 40px;
+        .headline{
+            position: relative;
+            top: 400px;
+            font-size: 7rem;
             text-align: center;
+            font-weight: 200;
+            border: 3px solid ${(props => props.theme.second)}; 
+            padding: 5px 15px;
+            
+            z-index: 1;
+        }
+        .subtitle{
+            top: 360px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 200px;
+            height: 20px;
+            font-family:${(props => props.theme.font2)};
+            h4{
+                margin: 0;
+                font-size: 12px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+            h5{
+                margin: 0;
+                font-size: 9px;
+                width: 40px;
+                text-align: center;
+            }
         }
     }
+
+
     .image-section{
         height: 100vh;
+        max-height: 60vw;
+        width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        padding: 15px 20px;
 
-        img{
-            width: 90%;
-            height: 90%;
-            object-fit: cover;
+        .image-container{
+            position: relative;
+            width: 100%;
+            height: 50vw;
+            max-height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            justify-self: center;
+
+        }
+        .image.primary{
+            background-image: url(${primary});
+            background-size: cover;
+            opacity: 1;
+        }
+        .image.second{
+            background-image: url(${second});
+            background-size: cover;
+            opacity: 0;
+        }
+        .image.third{
+            background-image: url(${third});
+            background-size: cover;
+            opacity: 0;
+        }
+        .image.fourth{
+            background-image: url(${fourth});
+            background-size: cover;
+            opacity: 0;
         }
     }
     h3{
@@ -76,13 +122,30 @@ const Banner = () => {
     let section1= useRef(null)
     let subtitle = useRef(null)
     let headline = useRef(null)
-    let banner = useRef(null)
+    let primary = useRef(null);
+    let second = useRef(null);
+    let third = useRef(null);
+    let fourth = useRef(null);
+    let tl = gsap.timeline({repeat: -1});
 
     useEffect(() => {
         scrollLogo(headline, section1)
         scrollSubtitle(subtitle, section1)
         hideSubtitle(subtitle, headline)
-        expandBanner(banner)
+        
+        tl
+        .to(primary, { opacity: 1, duration: 3})
+        .to(primary, { opacity: 0, duration: 1.5})
+        .to(second, { opacity: 1, duration: 1.5}, "-=1.5")
+        .to(second, { opacity: 1, duration: 3})
+        .to(second, { opacity: 0, duration: 1.5})
+        .to(third, { opacity: 1, duration: 1.5}, "-=1.5")
+        .to(third, { opacity: 1, duration: 3})
+        .to(third, { opacity: 0, duration: 1.5})
+        .to(fourth, { opacity: 1, duration: 1.5}, "-=1.5")
+        .to(fourth, { opacity: 1, duration: 3})
+        .to(fourth, { opacity: 0, duration: 1.5})
+        .to(primary, { opacity: 1, duration: 1.5}, "-=1.5")
     })
 
 
@@ -97,7 +160,12 @@ const Banner = () => {
                 </div>
             </div>
             <div className='image-section'>
-                <img src={restaurant} ref={ el => banner = el } alt="inside-little-tap"></img>
+                <div className="image-container">
+                <div className="image primary" ref={el => primary = el}></div>
+                <div className="image second" ref={el => second = el}></div>
+                <div className="image third" ref={el => third = el}></div>
+                <div className="image fourth" ref={el => fourth = el}></div>
+                </div>
             </div>
         </Styled>
     )
