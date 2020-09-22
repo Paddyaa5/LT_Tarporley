@@ -6,7 +6,7 @@ const Styled = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 650px){
         display:none;
     }
 

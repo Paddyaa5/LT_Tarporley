@@ -167,7 +167,7 @@ const Styled = styled.div`
         }
 
         .supplier-text-list{
-            padding: 40px 120px;
+            padding: 80px 120px 40px 120px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -182,9 +182,9 @@ const Styled = styled.div`
                 width: 335px;
             }
             p{
-                margin: 25px 0;
+                margin: 30px 0 50px 0;
                 padding: 5px;
-                width: 90%;
+                width: 70%;
                 text-align: center;
                 @media screen and (max-width: 950px){
                     width: 95%;
@@ -199,6 +199,7 @@ const Styled = styled.div`
                 width: 90%;
                 text-align: left;
                 list-style: none;
+                font-size: 18px;
                 font-family: ${props => props.theme.font2};
                 @media screen and (max-width: 950px){
                     width: 95%;
@@ -206,7 +207,11 @@ const Styled = styled.div`
                 @media screen and (max-width: 500px){
                     width: 95%;
                 }
+                li{
+                    margin: 5px 0;
+                }
             }
+
         }
     }
 
