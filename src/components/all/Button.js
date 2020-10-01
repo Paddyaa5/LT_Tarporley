@@ -5,6 +5,7 @@ const Styled = styled.button`
     width: 100px;
     height: 40px;
     outline: none;
+    margin-top: 30px;
     border: 2px solid ${(props => props.theme.second)};
     color: ${(props => props.theme.second)};
     background-color: ${(props => props.theme.first)};
@@ -19,10 +20,10 @@ const Styled = styled.button`
     }
 `
 
-const Button = () => {
+const Button = ({text}) => {
     return (
         <Styled>
-            Menu
+            {text}
         </Styled>
     )
 };

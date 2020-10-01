@@ -11,6 +11,10 @@ const Styled = styled.div`
     align-items: center;
     overflow: hidden;
     position: relative;
+    @media screen and (max-width: 500px){
+        height: 40px;
+        width: 40px;
+    }
     .hamburger {
         width: 25px;
         height: 25px;

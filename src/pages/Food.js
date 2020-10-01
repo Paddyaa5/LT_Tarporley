@@ -2,22 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 
 //components
-import Banner from '../components/food/Banner';
+import Header from '../components/all/Header';
 import Main from '../components/food/Main';
 import Home from '../components/navigation/HomeButton';
-import Logo from '../components/navigation/Logo';
+//images
+import table from '../images/table.jpg'
 
 
 const Styled = styled.div`
     background-color: ${props => props.theme.first};
+    width: 100vw;
+    overflow: hidden;
 `
 const Food = () => {
 
     return (
         <Styled>
             <Home />
-            <Logo />
-            <Banner />
+            <Header image={table} pageTitle="Our Food"/>
             <Main />
         </Styled>
     )

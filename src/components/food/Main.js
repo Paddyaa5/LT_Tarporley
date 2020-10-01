@@ -4,71 +4,37 @@ import styled from 'styled-components';
 import brunch from '../../images/brunch.jpg';
 import lunch from '../../images/lunch.jpg';
 import main from '../../images/main.jpg';
-//animations
-import { titleReveal, textFadeIn } from '../../animations/FoodAnimations';
-
+import vibes from '../../images/good-vibes.jpg'
+//components
+import Title from '../all/Title'
+import Headline from '../all/Headline'
+import SectionText from '../all/SectionText'
 
 
 const Styled = styled.div`
     height: auto;
     width: 100vw;
-    overflow: hidden;
-    background-color: ${props => props.theme.first};
     padding: 20px;
+    border-bottom: 1px solid ${(props => props.theme.second)}; 
 
     .intro{
-        padding: 80px 0;
+        padding: 120px 0px 20px 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
         @media screen and (max-width: 500px){
-            padding: 0px 0px;
+            padding: 50px 0px 0px 0px;
+        }
+        #menu-text{
+            margin: 0 25vw 30px 25vw;
+            text-align: justify;
+            @media screen and (max-width: 500px){
+                margin: 20px 5vw;
+                font-size: 12px;
+            }
         }
     }
-    .reveal{
-        font-family: ${props => props.theme.font1};
-        font-weight: 200;
-        color: ${props => props.theme.second};
-        font-size: 42px;
-        position: relative;
-        padding: 2px 15px;
-        transform-origin: left;
-        transform: scaleX(1);
-        transition: 0.5s;
-    }
-    .reveal.active{
-        transform: scaleX(1);
-    }
-    .reveal.active:before{
-        transform: scaleX(0);
-    }
-    .reveal:before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: ${props => props.theme.second};
-        transform-origin: right;
-        transition: 0.5s;
-    }
-    .text{
-        color: ${props => props.theme.second};
-        font-family: ${props => props.theme.font3};
-        font-size: 14px;
-        margin: 15px 15vw;
-        text-align: center;
-        opacity: 0;
-        transition: 1.2s;
-        @media screen and (max-width: 500px){
-            margin: 20px 5vw;
-            font-size: 12px;
-        }
-    }
-    .text.active{
-        opacity: 1;
-    }
+
     .menus{
         padding: 20px 20px;
         width: 100%;
@@ -121,7 +87,7 @@ const Styled = styled.div`
         }
         .horizontals{
             height: 20px;
-            width: 70%;
+            width: 30%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -166,20 +132,18 @@ const Styled = styled.div`
             }
         }
 
-        .supplier-text-list{
-            padding: 80px 120px 40px 120px;
+        .suppliers-section{
+            padding: 80px 35vw 40px 100px;
+            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
             @media screen and (max-width: 950px){
                 padding: 40px 80px;
             }
             @media screen and (max-width: 500px){
                 padding: 0px 0px;
-            }
-            h1{
-                width: 335px;
             }
             p{
                 margin: 30px 0 50px 0;
@@ -194,12 +158,11 @@ const Styled = styled.div`
                 }
             }
             ul{
-                margin: 0;
+                margin: 0 0 0 100px;
                 padding: 5px;
                 width: 90%;
                 text-align: left;
                 list-style: none;
-                font-size: 18px;
                 font-family: ${props => props.theme.font2};
                 @media screen and (max-width: 950px){
                     width: 95%;
@@ -208,10 +171,25 @@ const Styled = styled.div`
                     width: 95%;
                 }
                 li{
-                    margin: 5px 0;
+                    color: ${props => props.theme.second};
+                    font-size: 16px;
+                    margin: 10px 0;
                 }
             }
-
+            img{
+                position: absolute;
+                top: 15vh;
+                right: 15vw;
+                width: 280px;
+                @media screen and (max-width: 950px){
+                    width: 180px;
+                    top: 280px;
+                    right: 10vw;
+                }
+                @media screen and (max-width: 500px){
+                    display: none;
+                }
+            }
         }
     }
 
@@ -219,26 +197,16 @@ const Styled = styled.div`
 
 const Main = () => {
 
-    let title = useRef(null);
-    let supplierTitle = useRef(null);
-    let menuText = useRef(null);
-    let supplierText = useRef(null);
-    let supplierList = useRef(null);
-
-    useEffect(() => {
-
-        titleReveal(title)
-        titleReveal(supplierTitle)
-        textFadeIn(menuText)
-        textFadeIn(supplierText)
-        textFadeIn(supplierList)
-    })
-
     return (
         <Styled>
             <div className="intro">
-                <h1 className="reveal" ref={el => title = el}>MENU'S</h1>
-                <p className="text" ref={el => menuText = el}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s typesetting, remaining essentially unchanged. when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.</p>
+                <Title text="MENU'S" />
+                <Headline text="Our dining style is very informal, as is all the food." />
+                <div id="menu-text">
+                    <SectionText
+                        text="Here are some sample menus for you take a look at. All our dishes are prepared fresh to order from brunch at the weekend right the way through to our daily small plate menu & specials." >
+                    </SectionText>
+                </div>
             </div>
 
             <div className="menus">
@@ -258,19 +226,21 @@ const Main = () => {
 
             <div className="suppliers">
                 <div className="horizontals">
-                    <div className="hz-line1"></div>
-                    <div className="hz-line2"></div>
+                    <div className="hz-line1" ></div>
+                    <div className="hz-line2" ></div>
                 </div>
                 <div className="verticals">
                     <div className="vr-line1"></div>
                     <div className="vr-line2"></div>
                 </div>
-                <div className="supplier-text-list">
-                    <h1 className="reveal" ref={el => supplierTitle = el}>OUR SUPPLIERS</h1>
-                    <p className="text" ref={el => supplierText = el}>
-                    At LT one of our main principles is to create unique and exciting food/drink using locally sorced produce. We're so lucky to work with such amazing suppliers without them our bar would not be the same.
-                    </p>
-                    <ul className="text" ref={el => supplierList = el}>
+                <div className="suppliers-section">
+                    <Title text="OUR SUPPLIERS" />
+                    <Headline text="Keeping it local & independent is so important to Little Tap" />
+                    <SectionText 
+                        className="text" 
+                        text="We work closely with our suppliers to ensure we bring you the best quality from the superb drinks selection to the seasonal small plates & specialised coffee.">
+                    </SectionText>
+                    <ul>
                         <li>Burrows Butchers, Bunbury</li>
                         <li>Good Cheese Company, Tattenhall</li>
                         <li>Devonshire Bakery, Frodsham</li>
@@ -280,6 +250,7 @@ const Main = () => {
                         <li>Perrys Produce, Middlewich</li>
                         <li>Hill Farm Eggs, Alpraham</li>
                     </ul>
+                    <img src={vibes} alt="lt-good-vibes"></img>
                 </div>
             </div>
         </Styled>

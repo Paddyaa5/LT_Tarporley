@@ -2,14 +2,14 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import styled, { keyframes } from 'styled-components';
-
+//images
 import littletap from "../../images/littletap.jpg";
-
+//components
 import Hours from '../../components/all/Hours';
 import Address from '../../components/all/Address';
 import Email from '../../components/all/Email';
 import Phone from '../../components/all/Phone';
-
+//animations
 import {
   staggerMenuText,
   staggerMenuReveal,
@@ -33,7 +33,7 @@ const backgroundEffect = keyframes`
 const Styled = styled.div`
   display: none;
   position: fixed;
-  z-index: 9;
+  z-index: 11;
   top: 0;
   bottom: 0;
   left: 0;
@@ -63,8 +63,6 @@ const Styled = styled.div`
       left: 0;
       right: 0;
       opacity: 0;
-      background-position: center;
-      background-repeat: no-repeat;
       animation-name: ${backgroundEffect};
       animation-duration: 40s;
       animation-iteration-count: infinite;
@@ -190,7 +188,6 @@ const Navigation = ({state}) => {
       gsap.to(menu, { duration: 1.3, css: {display: 'none'}
       })
     } else if (state.clicked === true || (state.clicked === true && state.initial === null)) {
-      // open menu
       gsap.to(menu, {
         duration: 0,
         css: {display: 'block'}

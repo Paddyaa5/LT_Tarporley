@@ -25,6 +25,11 @@ const Styled = styled.div`
         font-family: ${(props => props.theme.font1)};
         font-size: 30px;
         font-weight: 200;
+        @media screen and (max-width: 500px){
+            height: 40px;
+            width: 40px;
+            font-size: 26px;
+        }
     }
     .home-rectangle{
         position: fixed;
@@ -36,6 +41,12 @@ const Styled = styled.div`
         color: ${(props => props.theme.first)};
         font-family: ${(props => props.theme.font2)};
         font-size: 22px;
+        @media screen and (max-width: 500px){
+            height: 40px;
+            width: 80px;
+            font-size: 18px;
+            left: 60px;
+        }
     }
 `
 
