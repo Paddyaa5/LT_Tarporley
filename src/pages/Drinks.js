@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Header from '../components/all/Header';
 import Home from '../components/navigation/HomeButton';
 //images
-import bar from '../images/bar.jpg'
+import drinks from '../images/drinks.jpg'
 
 
 const Styled = styled.div`
@@ -17,7 +17,7 @@ const Drinks = () => {
     return (
         <Styled>
             <Home />
-            <Header image={bar} pageTitle="Our Drinks"/>
+            <Header image={drinks} pageTitle="Our Drinks"/>
 
         </Styled>
     )

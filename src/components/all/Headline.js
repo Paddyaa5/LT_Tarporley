@@ -8,10 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 const Styled = styled.h2`
     font-family: ${props => props.theme.font2};
     color: ${props => props.theme.second};
-    font-size: 18px;
+    font-size: 24px;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
+    padding: 0 30px;
 
     span{
         display: inline-block;

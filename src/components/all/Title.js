@@ -12,7 +12,6 @@ const Styled = styled.div`
     width: auto;
     height: auto;
     padding: 0;
-    margin-top: 15px;
 
     .reveal{
         position: relative;

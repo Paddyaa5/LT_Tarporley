@@ -31,6 +31,7 @@ const Styled = styled.div`
         .intro{
             height: 300px;
             width: 100%;
+            color: ${(props) => props.theme.first};
         }
         form{
             margin: 60px 0px;
@@ -75,17 +76,18 @@ const Styled = styled.div`
             }
         }
     }
-    .
+    
 
 `
 
 const Main = () => {
     return (
         <Styled>
-            <Title text="Say Hello!" />
-            <Headline text="We would love to hear from you and will respond as soon as we possible" />
             <div className="form-section">
-                <div className="intro"></div>
+                <div className="intro">
+                    <Title text="Say Hello!" />
+                    <Headline text="We would love to hear from you and will respond as soon as we possible" />
+                </div>
                 <form action="https://send.pageclip.co/3zEd43iTR94cUVrMCL84A2stz6xLHJ1S" method="POST">
                 <input 
                     className="form-item"

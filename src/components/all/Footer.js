@@ -30,7 +30,6 @@ const TopFooter = styled.div`
         height: 100%;
         width: 100%;
         position: relative;
-        font-family: ${(props => props.theme.font3)};
         color: ${(props => props.theme.first)};
         display: flex;
         justify-content: space-evenly;
@@ -40,7 +39,7 @@ const TopFooter = styled.div`
         background: url(${footer}) center center;
         background-size: cover;
         padding: 50px 10px;
-        
+        border-top: ${(props) => props.theme.first} 0.1px solid;
         border-bottom: ${(props) => props.theme.first} 0.1px solid;
     }
     .hero::after{
@@ -55,6 +54,8 @@ const TopFooter = styled.div`
     }
     h4{
         align-self: center; 
+        font-family: ${(props => props.theme.font1)};
+        font-weight: 200;
         color: ${(props => props.theme.fourth)};
         font-size: 22px;
         margin-top: 10px;

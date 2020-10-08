@@ -1,6 +1,7 @@
 /* imported fonts for Little Tap branding */
 @font-face { font-family: Landmark-Dimensional ; src: url('./fonts/Landmark-Dimensional.otf')} 
 @font-face { font-family: Bebas-Regular ; src: url('./fonts/Bebas-Regular.ttf')} 
+@font-face { font-family: Fertigo_PRO ; src: url('./fonts/Fertigo_PRO.otf')} 
 /* imported additional google font: Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;900&display=swap');
 

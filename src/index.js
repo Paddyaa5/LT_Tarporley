@@ -8,12 +8,13 @@ const theme = {
   first: '#f8f2e7', //Floral White
   second: '#18323A', //Gunmetal
   third: '#464C49', //Grey
-  fourth: '#ffcb9a', //tan
-  fifth: '#98494B', //soft red
+  fourth: '#BF9B51', //Gold
+  fifth: '#98494B', //Soft red
+  sixth: '#ffcb9a', //Tan
   
   font1: "'Landmark-Dimensional', sans-serif",
   font2: "'Bebas-Regular', sans-serif",
-  font3: "'Poppins', sans-serif",
+  font3: "'Fertigo_PRO', sans-serif",
 }
 
 ReactDOM.render(

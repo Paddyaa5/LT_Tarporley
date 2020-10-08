@@ -13,7 +13,7 @@ const Styled = styled.div`
         font-family: ${props => props.theme.font1};
         font-weight: 200;
         background-color: ${props => props.theme.second};
-        z-index: 20;
+        z-index: 5000;
         .logo-container{
             height: 70vh;
             display: flex;

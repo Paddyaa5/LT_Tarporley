@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 const Styled = styled.p`
     font-family: ${props => props.theme.font3};
     color: ${props => props.theme.third};
-    font-size: 12px;
+    font-size: 14px;
     overflow: hidden;
-    margin-top: 30px;
+    margin-top: 40px;
     white-space: wrap;
     text-align: justify;
 

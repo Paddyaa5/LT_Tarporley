@@ -15,64 +15,57 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const Styled = styled.div`
-    position: relative;
     height: auto;
     width: 100vw;
-    padding: 15px 20px;
+    padding: 20px;
     border-top: 1px solid ${(props => props.theme.second)}; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.4fr 1.1fr;
+    gap: 20px 20px;
+    gap: 10px;
+    grid-template-areas:
+        "about-text"
+        "about-image";
     @media screen and (max-width: 500px){
+        height: 100vh;
         padding: 0;
+        gap: 0px;
+        grid-template-rows: 65% 35%;
     }
+    .about-text{
+        grid-area: about-text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15vh 25vw;
+        @media screen and (max-width: 900px){
+            padding: 10vh 20vw;
+        }
+        @media screen and (max-width: 500px){
+            padding: 0 20px;
+        }
+    }
+    .about-image{
+        grid-area: about-image;
+        width: 70%;
+        justify-self: center;
+        background: url(${clock});
+        background-position: 50% 20%;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 900px){
+            width: 90%;
+        }
+        @media screen and (max-width: 700px){
+            width: 100%;
+        }
+    }
+        
     
-    .about-us{
-        position: relative;
-        height: auto;
-        width: 100%;
-
-        .about-us-section{
-            margin: 80px 23vw 80px 23vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            @media screen and (max-width: 1000px){
-                margin: 80px 18vw 80px 18vw;
-            }
-            @media screen and (max-width: 800px){
-                margin: 80px 15vw 80px 15vw;
-            }
-            @media screen and (max-width: 650px){
-                margin: 80px 10vw 80px 10vw;
-            }
-            @media screen and (max-width: 500px){
-                margin: 80px 5vw 80px 5vw;
-            }
-            #about-headline{
-                padding: 0 60px;
-                @media screen and (max-width: 500px){
-                    padding: 0 20px;
-                }
-            }
-        }
-        .clock-img-container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 10vw;
-            overflow: hidden;
-            @media screen and (max-width: 500px){
-                padding: 0;
-            }
-            img{
-                width: 100%;
-                max-width: 800px;
-                height: 100%;
-                max-height: 300px;
-                object-fit: cover;
-                object-position: 70% 30%;
-                transform: scale(1.2)
-            }
-        }
-    }
 
 `
 
@@ -87,21 +80,18 @@ const About = () => {
 
     return (
         <Styled>
-            <div className='about-us'>
-                <div className="about-us-section">
-                    <Title text="About Us"/>
-                    <div id="about-headline">
-                    <Headline  text="A new & innovative dining experience" />
-                    </div>
-                    <SectionText text="Since opening in summer of 2016, our key focus has always been, to offer a wide range of craft beer, eclectic gin & a menu of small plates inspired by modern British cuisine." />
-                    <SectionText text="As a team we host numerous events from live Music, party nights & a cinema club, to wine dinners & pop up community concepts. Ensuring we are always thinking ahead to the next date in our diary to bring some exciting energy to our village." />
-                </div>
-                <div className="clock-img-container" ref={el => container = el}>
-                    <img src={clock} alt="little-tap-clock" ref={el => image = el}></img>
-                </div>
+            <div className="about-text">
+                <Title text="About LT"/>
+                <Headline  text="A new & innovative dining experience" />
+                <SectionText text="Since opening in summer of 2016, our key focus has always been, to offer a wide range of craft beer, eclectic gin & a menu of small plates inspired by modern British cuisine." />
+                <SectionText text="As a team we host numerous events from live Music, party nights & a cinema club, to wine dinners & pop up community concepts. Ensuring we are always thinking ahead to the next date in our diary to bring some exciting energy to our village." />
             </div>
+            <div className="about-image"></div>
         </Styled>
     )
 };
 
 export default About;
+
+
+
